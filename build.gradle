@@ -1,12 +1,16 @@
 plugins {
-    id 'java'
-
+    id 'application'
 }
-
 
 
 group 'org.example'
 version '1.0-SNAPSHOT'
+
+
+application {
+    //mainModule.set('lightsoutFX')
+    mainClass.set('app.console.ConsoleApp')
+}
 
 repositories {
     mavenCentral()
