@@ -1,8 +1,8 @@
 package backend.models;
 
-public class Maestro {
+public class Teacher {
     String Name;
-    public Maestro(String Name){
+    public Teacher(String Name){
         this.Name=Name;
     }
 

@@ -21,11 +21,15 @@ public class MainApp {
                 var number_login = login.nextInt();
 
                 if(number_login == 0){
+                    System.out.println("Nombre del estudiante:");
+                    var nombre_estudiante = login.nextLine();
                     maestro=false;
                     Controller =new ControllerEstudiante();
                     alreadylogin=true;
                 }
                 else if (number_login == 1) {
+                    System.out.println("Nombre del estudiante:");
+                    var nombre_estudiante = login.nextLine();
                     maestro=true;
                     alreadylogin=true;
                 } else {

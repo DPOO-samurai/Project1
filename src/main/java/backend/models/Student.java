@@ -9,10 +9,10 @@ public class Student {
     public String Name;
     public ArrayList<String> currentCourses;
     public ArrayList<String> completedCourses;
-    public HashMap<String, String> requisitos_ya_cumplidos;
+    public HashMap<String, String> requisitesDone;
 
-    public boolean verificarRequisitos(ArrayList<String> requisitos){
-        ListIterator<String> ite = requisitos.listIterator();
+    public boolean verifyRequisites(ArrayList<String> requisites){
+        ListIterator<String> ite = requisites.listIterator();
         while (ite.hasNext()) {
             String requisito_nuevo = ite.next();
             ListIterator<String> it = completedCourses.listIterator();
@@ -30,8 +30,8 @@ public class Student {
         }
         return true;
     }
-    public HashMap<String,String>getRequisitos_ya_cumplidos(){
-        return requisitos_ya_cumplidos;
+    public HashMap<String,String>getRequisitesdone(){
+        return requisitesDone;
     }
 
     public String getName() {

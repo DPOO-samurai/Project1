@@ -1,30 +1,32 @@
 package app.console;
 
+import backend.models.UsersController;
 import backend.models.Student;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 
 public class ControllerEstudiante {
     Student Estudiante_actual;
-    public int getNumerocreditos(){
+    UsersController Controller= new UsersController();
+    /*public boolean searchStudent(){
+        return Controller.;
+    }*/
+    public int getNumberofcredits(){
         return 0;
     }
-    public void registrarCursos(){
+    public void registerCourses(){
 
     }
     /*public HashMap<String, String> getRequisitos_ya_cumplidos(){
 
     }
     */
-    public void cursosYacumplidos() {
+    public void coursesDone() {
 
     }
-    public void cursosQuefaltanPorcumplir() {
+    public void coursesNotdone() {
     }
-    public void esCandidatoGrado() {
+    public void isDegreecandidate() {
     }
-    public void planeacionSemestres() {
+    public void semesterPlanning() {
     }
 
 }
