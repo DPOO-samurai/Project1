@@ -81,8 +81,5 @@ public class ConsoleApp {
         Pensum test_pensum_t = objectMapper.readValue(json_pensum_t, Pensum.class);
 
         System.out.println(Global.rootPath);
-
-
-
     }
 }

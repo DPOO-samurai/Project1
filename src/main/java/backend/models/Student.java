@@ -37,4 +37,6 @@ public class Student {
     public String getName() {
         return Name;
     }
+    public String nickname;
+    public String Name;
 }
