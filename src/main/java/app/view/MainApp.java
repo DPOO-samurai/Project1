@@ -58,7 +58,8 @@ public class MainApp {
                 Scanner entradaprincipal = new Scanner(System.in);
                 int opcion = Integer.parseInt(entradaprincipal.nextLine());
                 if (opcion == 1) {
-                    System.out.println("seleccione una opcion para continuar");
+
+                    requisitos_ya_cumplidos.forEach((k,v) -> System.out.println("Key: " + k + ": Value: " + v));
                 }
                 else if(opcion == 2) {
                     System.out.println("seleccione una opcion para continuar");
