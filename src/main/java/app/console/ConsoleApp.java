@@ -64,11 +64,20 @@ public class ConsoleApp {
                 sCourse);
         System.out.println("student_course.json written");
 
-        var jsontext = Files.lines(Path.of("C:\\Users\\idbl6\\Desktop\\test\\student_course.json")).collect(
-            Collectors.joining());
-
-
+        var jsontext = Files.lines(Path.of("C:\\Users\\idbl6\\Desktop\\test\\student_course.json"))
+            .collect(
+                Collectors.joining());
         StudentCourse testjson = objectMapper.readValue(jsontext, StudentCourse.class);
+
+        var json_pensum = Files.lines(Path.of("C:\\Users\\idbl6\\Desktop\\test\\pensum.json"))
+            .collect(
+                Collectors.joining());
+        Pensum test_pensum = objectMapper.readValue(json_pensum, Pensum.class);
+
+        var json_pensum_t = Files.lines(Path.of("C:\\Users\\idbl6\\Desktop\\test\\json_pensum_test.json"))
+            .collect(
+                Collectors.joining());
+        Pensum test_pensum_t = objectMapper.readValue(json_pensum_t, Pensum.class);
 
         System.out.println(Global.rootPath);
     }

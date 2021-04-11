@@ -11,6 +11,9 @@ public class GraduationRequisites {
 
     public ArrayList<String> qualifiedattributes;
 
+    public GraduationRequisites() {
+    }
+
     public GraduationRequisites(int credits, HashMap<String, Integer> quantifiedAttributes,
         ArrayList<String> qualifiedattributes) {
         this.credits = credits;
