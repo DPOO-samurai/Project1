@@ -1,6 +1,7 @@
 package app.console;
 
 import backend.Global;
+import backend.models.CourseList;
 import backend.models.Pensum;
 import backend.models.Course;
 import backend.models.GraduationRequisites;
@@ -52,8 +53,9 @@ public class ConsoleApp {
 
         var courseList = new ArrayList<Course>();
         courseList.add(course);
+        var clWrapper = new CourseList(courseList);
 
-        var pensum = new Pensum("ISIS", courseList, graduationRequisites);
+        var pensum = new Pensum("ISIS", clWrapper, graduationRequisites);
         objectMapper
             .writeValue(new File("C:\\tmp_java\\pensum.json"),
                 pensum);

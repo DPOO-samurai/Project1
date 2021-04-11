@@ -9,14 +9,14 @@ import java.util.ListIterator;
 public class Pensum {
 
     public String pensumName;
-    public ArrayList<Course> courses;
+    public CourseList courses;
     public GraduationRequisites graduationRequisites;
 
     public Pensum() {
     }
 
-    public Pensum(String pensumName, ArrayList<Course> courses,
-                  GraduationRequisites graduationRequisites) {
+    public Pensum(String pensumName, CourseList courses,
+        GraduationRequisites graduationRequisites) {
         this.pensumName = pensumName;
         this.courses = courses;
         this.graduationRequisites = graduationRequisites;
@@ -29,17 +29,19 @@ public class Pensum {
     }
 
     public Course searchCourse(String nombre) {
-
-        ListIterator<Course> it = courses.listIterator();
-        while (it.hasNext()) {
-            Course nuevo = it.next();
-            if (nuevo.getId().equals(nombre)) {
-                System.out.println("se ha encontrado el estudiante");
-                return nuevo;
+        for (var course : courses.getCourses()) {
+            if (nombre.equals(course.id)) {
+                System.out.println("se ha encontrado el curso");
+                return course;
             }
         }
-        System.out.println("no se ha encontrado el estudiante");
+        System.out.println("No se ha encontrado el curso");
+
         return null;
+    }
+
+    public boolean courseExist(String course) {
+        return courses.courseExist(course);
     }
 }
 

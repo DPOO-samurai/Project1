@@ -74,4 +74,15 @@ public class CourseList {
         }
         return corequisiteList;
     }
+
+    public boolean courseExist(String courseName){
+        boolean flag = false;
+        for (var course : courses) {
+            if (courseName.equals(course.id)) {
+                flag = true;
+                break;
+            }
+        }
+        return flag;
+    }
 }

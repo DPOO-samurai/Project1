@@ -76,4 +76,12 @@ public class Course {
     public void setCorequisites(ArrayList<String> corequisites) {
         this.corequisites = corequisites;
     }
+
+    public ArrayList<String> getRequisites() {
+        var tmp = new ArrayList<String>();
+        tmp.addAll(prerequisites);
+        tmp.addAll(corequisites);
+
+        return tmp;
+    }
 }

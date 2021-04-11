@@ -21,16 +21,20 @@ public class CourseValidation {
         return isValid(course, null);
     }
 
-    public boolean isValid(Course course, StudyPlan actualPlan) {
-        if (pensum.courseExist(course)) {
-            student.getCompletedRequirements();
-            lc = course.getRequirements();
-            for (var course : lc)
-            {
+    public boolean isValid(Course c, StudyPlan actualPlan) {
+        boolean flag = false;
 
+        if (pensum.courseExist(c.id)) {
+            student.getCompletedRequirements();
+            ArrayList<String> courseRequisites = c.getRequisites();
+            for (var course : courseRequisites) {
+                if (c.id.equals(course)) {
+                    flag = true;
+                    break;
+                }
             }
         }
 
-        return false;
+        return flag;
     }
 }
