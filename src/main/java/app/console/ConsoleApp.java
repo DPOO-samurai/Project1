@@ -1,10 +1,12 @@
 package app.console;
 
+import backend.Global;
 import backend.models.Pensum;
 import backend.models.Course;
 import backend.models.GraduationRequisites;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
+import java.nio.file.Path;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -51,5 +53,7 @@ public class ConsoleApp {
             .writeValue(new File("C:\\Users\\idbl6\\Desktop\\test\\pensum.json"),
                 pensum);
         System.out.println("pensum.json written");
+
+        System.out.println(Global.rootPath);
     }
 }
