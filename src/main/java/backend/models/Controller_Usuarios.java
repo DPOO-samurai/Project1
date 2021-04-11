@@ -7,7 +7,7 @@ public class Controller_Usuarios {
     ArrayList<Student> Lista_estudiantes= new ArrayList<Student>();
     ArrayList<Maestro> Lista_Maestros= new ArrayList<Maestro>();
 
-    public Student Dar_estudiante(String Nombre_Estudiante){
+    public Student darEstudiante(String Nombre_Estudiante){
         ListIterator<Student> it = Lista_estudiantes.listIterator();
         while (it.hasNext()) {
             Student nuevo = it.next();
@@ -20,7 +20,7 @@ public class Controller_Usuarios {
         System.out.println("no se ha encontrado el estudiante");
         return null;
     }
-    public Maestro Dar_Maestro(String Nombre_Maestro){
+    public Maestro darMaestro(String Nombre_Maestro){
         ListIterator<Maestro> it = Lista_Maestros.listIterator();
         while (it.hasNext()) {
             Maestro nuevo = it.next();

@@ -11,7 +11,7 @@ public class Student {
     public ArrayList<String> completedCourses;
     public HashMap<String, String> requisitos_ya_cumplidos;
 
-    public boolean verificar_requisitos(ArrayList<String> requisitos){
+    public boolean verificarRequisitos(ArrayList<String> requisitos){
         ListIterator<String> ite = requisitos.listIterator();
         while (ite.hasNext()) {
             String requisito_nuevo = ite.next();

@@ -17,10 +17,10 @@ public class ControllerEstudiante {
 
     }
     */
-    public void cursos_ya_cumplidos() {
+    public void cursosYacumplidos() {
 
     }
-    public void cursos_que_faltan_por_cumplir() {
+    public void cursosQuefaltanPorcumplir() {
     }
     public void esCandidatoGrado() {
     }

@@ -28,7 +28,7 @@ public class Pensum {
         return objectMapper.readValue(rootPath + pensumName, Pensum.class);
     }
 
-    public Course buscar_curso(String nombre) {
+    public Course buscarCurso(String nombre) {
 
         ListIterator<Course> it = courses.listIterator();
         while (it.hasNext()) {

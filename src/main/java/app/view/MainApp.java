@@ -3,10 +3,12 @@ package app.view;
 import java.io.IOException;
 import java.util.Scanner;
 import app.console.ConsoleApp;
+import app.console.ControllerEstudiante;
 
 public class MainApp {
     public static void main(String[] args) throws IOException {
         ConsoleApp.Pesumform();
+        ControllerEstudiante Controller;
         while (true) {
             boolean alreadylogin=false;
             boolean maestro=false;
@@ -20,6 +22,7 @@ public class MainApp {
 
                 if(number_login == 0){
                     maestro=false;
+                    Controller =new ControllerEstudiante();
                     alreadylogin=true;
                 }
                 else if (number_login == 1) {
@@ -30,7 +33,7 @@ public class MainApp {
                 }
             }
             if (maestro) {
-                imprimir.imprimir_1();
+                imprimir.imprimir1();
                 System.out.println("seleccione una opcion para continuar");
                 Scanner entradaprincipal = new Scanner(System.in);
                 int opcion = Integer.parseInt(entradaprincipal.nextLine());
@@ -53,7 +56,7 @@ public class MainApp {
                 }
             }
             else{
-                imprimir.imprimir_2();
+                imprimir.imprimir2();
                 System.out.println("seleccione una opcion para continuar");
                 Scanner entradaprincipal = new Scanner(System.in);
                 int opcion = Integer.parseInt(entradaprincipal.nextLine());
