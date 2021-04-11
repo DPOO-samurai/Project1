@@ -11,6 +11,8 @@ public class Course {
     public ArrayList<String> prerequisites;
     public ArrayList<String> corequisites;
 
+    public Course() {
+    }
 
     public Course(String id, String name, int credits, ArrayList<String> attributes,
         ArrayList<String> prerequisites, ArrayList<String> corequisites) {
@@ -20,5 +22,10 @@ public class Course {
         this.attributes = attributes;
         this.prerequisites = prerequisites;
         this.corequisites = corequisites;
+    }
+
+    public Course(Course course) {
+        this(course.id, course.name, course.credits, course.attributes, course.prerequisites,
+            course.corequisites);
     }
 }

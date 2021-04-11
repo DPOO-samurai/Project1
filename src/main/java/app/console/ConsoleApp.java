@@ -4,12 +4,16 @@ import backend.Global;
 import backend.models.Pensum;
 import backend.models.Course;
 import backend.models.GraduationRequisites;
+import backend.models.StudentCourse;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.io.BufferedReader;
 import java.io.File;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.stream.Collectors;
 
 public class ConsoleApp {
 
@@ -53,6 +57,18 @@ public class ConsoleApp {
             .writeValue(new File("C:\\Users\\idbl6\\Desktop\\test\\pensum.json"),
                 pensum);
         System.out.println("pensum.json written");
+
+        var sCourse = new StudentCourse(course, 30);
+        objectMapper
+            .writeValue(new File("C:\\Users\\idbl6\\Desktop\\test\\student_course.json"),
+                sCourse);
+        System.out.println("student_course.json written");
+
+        var jsontext = Files.lines(Path.of("C:\\Users\\idbl6\\Desktop\\test\\student_course.json")).collect(
+            Collectors.joining());
+
+
+        StudentCourse testjson = objectMapper.readValue(jsontext, StudentCourse.class);
 
         System.out.println(Global.rootPath);
     }
