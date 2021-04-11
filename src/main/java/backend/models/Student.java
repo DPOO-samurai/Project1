@@ -7,8 +7,8 @@ import java.util.ListIterator;
 
 public class Student {
     public String Name;
-    public ArrayList<String> currentCourses;
-    public ArrayList<String> completedCourses;
+    public CourseList currentCourses;
+    public CourseList completedCourses;
     public HashMap<String, String> requisitos_ya_cumplidos;
 
     public boolean verificarRequisitos(ArrayList<String> requisitos){
@@ -37,6 +37,8 @@ public class Student {
     public String getName() {
         return Name;
     }
-    public String nickname;
-    public String Name;
+
+    public String getCompletedRequirements(){
+        return new String();
+    }
 }
