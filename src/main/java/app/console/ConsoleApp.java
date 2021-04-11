@@ -13,11 +13,12 @@ import java.nio.file.Path;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class ConsoleApp {
 
-    public static void main(String[] args) throws IOException {
+    public static void Pesumform() throws IOException {
         var objectMapper = new ObjectMapper();
 
         var quantifiedAttributes = new HashMap<String, Integer>();
@@ -29,7 +30,7 @@ public class ConsoleApp {
         var graduationRequisites = new GraduationRequisites(1,
             quantifiedAttributes, qualifiedAttributes);
         objectMapper
-            .writeValue(new File("C:\\Users\\idbl6\\Desktop\\test\\graduation_requisites.json"),
+            .writeValue(new File("C:\\dev\\test\\graduation_requisites.json"),
                 graduationRequisites);
 
         System.out.println("graduation_requisites.json written");
@@ -45,7 +46,7 @@ public class ConsoleApp {
 
         var course = new Course("ISIS-xxxx", "DPOO", 3, attributes, prerequisites, corequisites);
         objectMapper
-            .writeValue(new File("C:\\Users\\idbl6\\Desktop\\test\\course.json"),
+            .writeValue(new File("C:\\dev\\test\\course.json"),
                 course);
         System.out.println("course.json written");
 
@@ -54,31 +55,34 @@ public class ConsoleApp {
 
         var pensum = new Pensum("ISIS", courseList, graduationRequisites);
         objectMapper
-            .writeValue(new File("C:\\Users\\idbl6\\Desktop\\test\\pensum.json"),
+            .writeValue(new File("C:\\dev\\test\\pensum.json"),
                 pensum);
         System.out.println("pensum.json written");
 
         var sCourse = new StudentCourse(course, 30);
         objectMapper
-            .writeValue(new File("C:\\Users\\idbl6\\Desktop\\test\\student_course.json"),
+            .writeValue(new File("C:\\dev\\test\\student_course.json"),
                 sCourse);
         System.out.println("student_course.json written");
 
-        var jsontext = Files.lines(Path.of("C:\\Users\\idbl6\\Desktop\\test\\student_course.json"))
+        var jsontext = Files.lines(Path.of("C:\\dev\\test\\student_course.json"))
             .collect(
                 Collectors.joining());
         StudentCourse testjson = objectMapper.readValue(jsontext, StudentCourse.class);
 
-        var json_pensum = Files.lines(Path.of("C:\\Users\\idbl6\\Desktop\\test\\pensum.json"))
+        var json_pensum = Files.lines(Path.of("C:\\dev\\test\\pensum.json"))
             .collect(
                 Collectors.joining());
         Pensum test_pensum = objectMapper.readValue(json_pensum, Pensum.class);
 
-        var json_pensum_t = Files.lines(Path.of("C:\\Users\\idbl6\\Desktop\\test\\json_pensum_test.json"))
+        var json_pensum_t = Files.lines(Path.of("C:\\dev\\test\\json_pensum_test.json"))
             .collect(
                 Collectors.joining());
         Pensum test_pensum_t = objectMapper.readValue(json_pensum_t, Pensum.class);
 
         System.out.println(Global.rootPath);
+
+
+
     }
 }

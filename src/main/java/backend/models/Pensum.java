@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.ListIterator;
 
 public class Pensum {
 
@@ -15,7 +16,7 @@ public class Pensum {
     }
 
     public Pensum(String pensumName, ArrayList<Course> courses,
-        GraduationRequisites graduationRequisites) {
+                  GraduationRequisites graduationRequisites) {
         this.pensumName = pensumName;
         this.courses = courses;
         this.graduationRequisites = graduationRequisites;
@@ -26,4 +27,19 @@ public class Pensum {
         var objectMapper = new ObjectMapper();
         return objectMapper.readValue(rootPath + pensumName, Pensum.class);
     }
+
+    public Course buscar_curso(String nombre) {
+
+        ListIterator<Course> it = courses.listIterator();
+        while (it.hasNext()) {
+            Course nuevo = it.next();
+            if (nuevo.getId().equals(nombre)) {
+                System.out.println("se ha encontrado el estudiante");
+                return nuevo;
+            }
+        }
+        System.out.println("no se ha encontrado el estudiante");
+        return null;
+    }
 }
+
