@@ -7,20 +7,24 @@ import java.util.HashMap;
 
 public class ControllerEstudiante {
     Student Estudiante_actual;
-    public int getNumerocreditos{
-
+    public int getNumerocreditos(){
+        return 0;
     }
     public void registrarCursos(){
 
     }
-    public HashMap<String, String> getRequisitos_ya_cumplidos()
-        return
+    /*public HashMap<String, String> getRequisitos_ya_cumplidos(){
+
     }
-    System.out.println("1 - numero de creditos");
-        System.out.println("2 - registrar cursos ya tomados");
-        System.out.println("3 - requisitos ya cumplidos");
-        System.out.println("4 - cursos ya cursados");
-        System.out.println("5 - cursos que faltan por cumplir");
-        System.out.println("6 - es candidato a grado?");
-        System.out.println("7 - planeacion semestres");
+    */
+    public void cursos_ya_cumplidos() {
+
+    }
+    public void cursos_que_faltan_por_cumplir() {
+    }
+    public void esCandidatoGrado() {
+    }
+    public void planeacionSemestres() {
+    }
+
 }

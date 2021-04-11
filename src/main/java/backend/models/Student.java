@@ -34,4 +34,7 @@ public class Student {
         return requisitos_ya_cumplidos;
     }
 
+    public String getName() {
+        return Name;
+    }
 }

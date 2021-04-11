@@ -59,7 +59,7 @@ public class MainApp {
                 int opcion = Integer.parseInt(entradaprincipal.nextLine());
                 if (opcion == 1) {
 
-                    requisitos_ya_cumplidos.forEach((k,v) -> System.out.println("Key: " + k + ": Value: " + v));
+                    //requisitos_ya_cumplidos.forEach((k,v) -> System.out.println("Key: " + k + ": Value: " + v));
                 }
                 else if(opcion == 2) {
                     System.out.println("seleccione una opcion para continuar");
