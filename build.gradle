@@ -26,3 +26,8 @@ dependencies {
 test {
     useJUnitPlatform()
 }
+tasks {
+    run {
+        standardInput = System.in
+    }
+}
