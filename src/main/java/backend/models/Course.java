@@ -28,12 +28,4 @@ public class Course {
         this(course.id, course.name, course.credits, course.attributes, course.prerequisites,
             course.corequisites);
     }
-
-    public ArrayList<String> getRequisites() {
-        var tmp = new ArrayList<String>();
-        tmp.addAll(prerequisites);
-        tmp.addAll(corequisites);
-
-        return tmp;
-    }
 }
