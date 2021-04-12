@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 public class StudyPlan {
 
-    public CourseList courses;
-    public CourseList completedCourses;
+    public CourseList courses= new CourseList();
+    public CourseList completedCourses= new CourseList();
     public Pensum pensum;
     public CourseValidation validation;
     public ArrayList<String> missingCorequisites = new ArrayList<String>();

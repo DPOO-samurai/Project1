@@ -18,24 +18,35 @@ public class Student {
     public CourseValidation validator;
     @JsonIgnore
     public Pensum pensum;
+    public ArrayList<StudyPlan> studyPlanlist=new ArrayList<StudyPlan>();
+    public StudyPlan actualPlan;
 
 
     public Student() {
     }
-
+    //mejorar el not completedCourses no es lo que se le pone
     public Student(String name, CourseList currentCourses, CourseList completedCourses,
-        HashMap<String, String> requisitesDone) {
+        HashMap<String, String> requisitesDone, Pensum pensum) {
         this.name = name;
         this.currentCourses = currentCourses;
         this.completedCourses = completedCourses;
         this.requisitesDone = requisitesDone;
         this.notcompletedCourses=pensum.getCourses();
+        this.pensum=pensum;
+        this.validator= new CourseValidation(pensum,completedCourses);
+        for (int i = 0; i < 20; ++i) {
+            studyPlanlist.add(new StudyPlan(pensum.getCourses(), completedCourses,pensum,validator));
+        }
+    }
+    public void nuevoPlan(int numeroSemestre){
+        actualPlan=studyPlanlist.get(numeroSemestre+1);
+    }
+    //añadir el funcionamiento de delete y add
+    public void deleteCourse(String id){
 
     }
+    public void addcourse(String id){
 
-    public void addPensum(Pensum pensum) {
-        this.pensum = pensum;
-        validator = new CourseValidation(pensum, this);
     }
 
     public HashMap<String, String> getRequisitesdone() {
@@ -62,5 +73,9 @@ public class Student {
     }
     public HashMap<String, String> getRequisitesDone() {
         return requisitesDone;
+    }
+
+    public StudyPlan getActualPlan() {
+        return actualPlan;
     }
 }

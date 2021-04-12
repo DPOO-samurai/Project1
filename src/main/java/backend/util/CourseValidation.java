@@ -13,8 +13,9 @@ public class CourseValidation {
     public Pensum pensum;
     public CourseList realizados;
 
-    public CourseValidation(Pensum pensum, Student student) {
+    public CourseValidation(Pensum pensum, CourseList realizados) {
         this.pensum = pensum;
+        this.realizados=realizados;
     }
 
     public boolean isValid(Course c, CourseList cursosCompletados , ArrayList<String> missingCorequisites) {

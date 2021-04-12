@@ -125,4 +125,14 @@ public class CourseList {
         }
         return flag;
     }
+
+    @Override
+    public String toString() {
+        String stringCompleta="";
+        for (var course : courses) {
+            String newName=course.getName();
+            stringCompleta+=newName;
+        }
+        return stringCompleta;
+    }
 }
