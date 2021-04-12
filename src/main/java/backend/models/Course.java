@@ -29,54 +29,6 @@ public class Course {
             course.corequisites);
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getCredits() {
-        return credits;
-    }
-
-    public void setCredits(int credits) {
-        this.credits = credits;
-    }
-
-    public ArrayList<String> getAttributes() {
-        return attributes;
-    }
-
-    public void setAttributes(ArrayList<String> attributes) {
-        this.attributes = attributes;
-    }
-
-    public ArrayList<String> getPrerequisites() {
-        return prerequisites;
-    }
-
-    public void setPrerequisites(ArrayList<String> prerequisites) {
-        this.prerequisites = prerequisites;
-    }
-
-    public ArrayList<String> getCorequisites() {
-        return corequisites;
-    }
-
-    public void setCorequisites(ArrayList<String> corequisites) {
-        this.corequisites = corequisites;
-    }
-
     public ArrayList<String> getRequisites() {
         var tmp = new ArrayList<String>();
         tmp.addAll(prerequisites);
