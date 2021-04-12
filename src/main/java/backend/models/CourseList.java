@@ -1,10 +1,16 @@
 package backend.models;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 public class CourseList {
 
     private ArrayList<Course> courses;
+
+    public CourseList() {
+    }
 
     public CourseList(ArrayList<Course> courses) {
         this.courses = courses;
@@ -18,6 +24,7 @@ public class CourseList {
         this.courses = courses;
     }
 
+    @JsonIgnore
     public ArrayList<String> getIds() {
         var idList = new ArrayList<String>();
         for (var course : courses) {
@@ -26,6 +33,7 @@ public class CourseList {
         return idList;
     }
 
+    @JsonIgnore
     public ArrayList<String> getNames() {
         var nameList = new ArrayList<String>();
         for (var course : courses) {
@@ -34,6 +42,7 @@ public class CourseList {
         return nameList;
     }
 
+    @JsonIgnore
     public int getTotalCredits() {
         int total = 0;
         for (var course : courses) {
@@ -42,6 +51,7 @@ public class CourseList {
         return total;
     }
 
+    @JsonIgnore
     public ArrayList<String> getAttributes() {
         var nameList = new ArrayList<String>();
         for (var course : courses) {
@@ -50,6 +60,7 @@ public class CourseList {
         return nameList;
     }
 
+    @JsonIgnore
     public ArrayList<String> getRequisites() {
         var requisiteList = new ArrayList<String>();
         for (var course : courses) {
@@ -59,6 +70,7 @@ public class CourseList {
         return requisiteList;
     }
 
+    @JsonIgnore
     public ArrayList<String> getPrerequisites() {
         var prerequisiteList = new ArrayList<String>();
         for (var course : courses) {
@@ -67,6 +79,7 @@ public class CourseList {
         return prerequisiteList;
     }
 
+    @JsonIgnore
     public ArrayList<String> getCorequisites() {
         var corequisiteList = new ArrayList<String>();
         for (var course : courses) {
@@ -75,7 +88,7 @@ public class CourseList {
         return corequisiteList;
     }
 
-    public boolean courseExist(String courseName){
+    public boolean courseExist(String courseName) {
         boolean flag = false;
         for (var course : courses) {
             if (courseName.equals(course.id)) {

@@ -77,11 +77,11 @@ public class ConsoleApp {
                 Collectors.joining());
         Pensum test_pensum = objectMapper.readValue(json_pensum, Pensum.class);
 
-        var json_pensum_t = Files.lines(Path.of("C:\\tmp_java\\json_pensum_test.json"))
+        /*var json_pensum_t = Files.lines(Path.of("C:\\tmp_java\\json_pensum_test.json"))
             .collect(
                 Collectors.joining());
         Pensum test_pensum_t = objectMapper.readValue(json_pensum_t, Pensum.class);
-
+*/
         System.out.println(Global.rootPath);
     }
 }
