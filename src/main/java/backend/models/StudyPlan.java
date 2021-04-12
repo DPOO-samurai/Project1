@@ -1,26 +1,41 @@
 package backend.models;
 
-import java.util.ArrayList;
+import backend.util.CourseValidation;
 
 public class StudyPlan {
 
-    public ArrayList<Course> courses;
-    public ArrayList<String> completedCourses;
+    public CourseList courses;
+    public CourseList completedCourses;
+    public Pensum pensum;
+    public CourseValidation validation;
 
     public StudyPlan() {
 
     }
 
-    public StudyPlan(ArrayList<Course> courses, ArrayList<String> completedCourses) {
+    public StudyPlan(CourseList courses, CourseList completedCourses, Pensum pensum,
+        CourseValidation courseValidation) {
         this.courses = courses;
         this.completedCourses = completedCourses;
+        this.pensum = pensum;
+        this.validation = courseValidation;
     }
 
-    public void addCourse(Course course) {
-
+    public void addCourse(String courseName) {
+        Course c = pensum.searchCourse(courseName);
+        if (c != null) {
+            if (validation.isValid(c)) {
+                courses.getCourses().add(c);
+            }
+        }
     }
 
-    public void deleteCourse(Course course) {
-
+    public void deleteCourse(String courseName) {
+        Course c = pensum.searchCourse(courseName);
+        if (c != null) {
+            if (validation.isValid(c)) {
+                courses.deleteCourse(c);
+            }
+        }
     }
 }

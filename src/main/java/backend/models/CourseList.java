@@ -22,6 +22,35 @@ public class CourseList {
         this.courses = courses;
     }
 
+    public Course getCourse(Course c) {
+        for (var course : courses){
+            if (c.id.equals(course.id)){
+                return course;
+            }
+        }
+
+        return null;
+    }
+
+    public int getCourseIndex(Course c) {
+        for (int i = 0; i < courses.size(); i++){
+
+            if (c.id.equals(courses.get(i).id)){
+                return i;
+            }
+        }
+
+        return -1;
+    }
+
+    public void deleteCourse(Course c) {
+        for (var course : courses) {
+            if (c.id.equals(course.id)) {
+                courses.remove(c);
+            }
+        }
+    }
+
     @JsonIgnore
     public ArrayList<String> getIds() {
         var idList = new ArrayList<String>();
