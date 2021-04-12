@@ -1,9 +1,9 @@
 package app.view;
 
-import java.io.IOException;
-import java.util.Scanner;
 import app.console.ConsoleApp;
 import app.console.ControllerEstudiante;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class MainApp {
     public static void main(String[] args) throws IOException {

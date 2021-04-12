@@ -1,20 +1,18 @@
 package app.console;
 
 import backend.Global;
-import backend.models.CourseList;
-import backend.models.Pensum;
 import backend.models.Course;
+import backend.models.CourseList;
 import backend.models.GraduationRequisites;
+import backend.models.Pensum;
 import backend.models.StudentCourse;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Scanner;
 import java.util.stream.Collectors;
 
 public class ConsoleApp {

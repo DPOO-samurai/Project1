@@ -1,7 +1,6 @@
 package backend.util;
 
 import backend.models.Course;
-import backend.models.CourseList;
 import backend.models.Pensum;
 import backend.models.Student;
 import backend.models.StudyPlan;

@@ -1,7 +1,5 @@
 package backend.models;
 
-import java.util.ArrayList;
-
 public class StudentCourse extends Course {
     public int grade;
 
