@@ -1,39 +1,51 @@
 package backend.util;
 
 import backend.models.Course;
+import backend.models.CourseList;
 import backend.models.Pensum;
 import backend.models.Student;
 import backend.models.StudyPlan;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class CourseValidation {
 
     public Pensum pensum;
-    public Student student;
+    public CourseList realizados;
 
     public CourseValidation(Pensum pensum, Student student) {
         this.pensum = pensum;
-        this.student = student;
     }
 
-    public boolean isValid(Course course) {
-        return isValid(course, null);
-    }
-
-    public boolean isValid(Course c, StudyPlan actualPlan) {
-        boolean flag = false;
+    public boolean isValid(Course c, CourseList cursosCompletados , ArrayList<String> missingCorequisites) {
 
         if (pensum.courseExist(c.id)) {
-            student.getCompletedRequirements();
-            ArrayList<String> courseRequisites = c.getRequisites();
-            for (var course : courseRequisites) {
-                if (c.id.equals(course)) {
-                    flag = true;
-                    break;
+            var listaRealizados=realizados.getIds();
+            ArrayList<String> preRequisites= c.getPrerequisites();
+            ArrayList<String> corequisites=c.getCorequisites();
+            ArrayList<String> completeids=cursosCompletados.getIds();
+            Iterator<String> it = preRequisites.iterator();
+            //se encarga de pre requisitos
+
+            while (it.hasNext()){
+                String next =it.next();
+                if (completeids.contains(next)) {
+                    System.out.println("");
+                }
+                else{
+                    return false;
                 }
             }
-        }
+            //se encarga de corequisitos
+            for (var course : corequisites) {
+                if (missingCorequisites.contains(course)){
+                    missingCorequisites.remove(missingCorequisites.indexOf(course));
+                }
+                else{
+                    missingCorequisites.add(course);
+                }
+            }return true;
 
-        return flag;
+        }return false;
     }
 }

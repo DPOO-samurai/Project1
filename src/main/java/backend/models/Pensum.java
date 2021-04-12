@@ -43,5 +43,9 @@ public class Pensum {
     public boolean courseExist(String course) {
         return courses.courseExist(course);
     }
+
+    public CourseList getCourses() {
+        return courses;
+    }
 }
 

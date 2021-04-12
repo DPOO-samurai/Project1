@@ -1,7 +1,10 @@
 package app.console;
 
-import backend.models.Student;
+import backend.models.CourseList;
 import backend.models.UsersController;
+import backend.models.Student;
+
+import java.util.ArrayList;
 
 public class ControllerEstudiante {
     Student Estudiante_actual;
@@ -19,10 +22,11 @@ public class ControllerEstudiante {
 
     }
     */
-    public void coursesDone() {
-
+    public CourseList coursesDone() {
+        return Estudiante_actual.getCompletedCourses();
     }
-    public void coursesNotdone() {
+    public CourseList coursesNotdone() {
+        return Estudiante_actual.getnotcompletedCourses();
     }
     public void isDegreecandidate() {
     }
@@ -30,3 +34,4 @@ public class ControllerEstudiante {
     }
 
 }
+
