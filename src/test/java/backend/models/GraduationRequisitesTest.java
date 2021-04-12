@@ -38,7 +38,7 @@ class GraduationRequisitesTest {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String actual = new String();
+        String actual = "";
         try {
 
             actual = Files.lines(Path.of("C:\\tmp_java\\test\\graduation_requisites.json"))

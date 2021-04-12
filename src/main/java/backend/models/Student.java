@@ -58,7 +58,7 @@ public class Student {
     }
 
     public String getCompletedRequirements() {
-        return new String();
+        return "";
     }
     public CourseList getCurrentCourses() {
         return currentCourses;

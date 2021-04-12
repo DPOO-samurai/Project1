@@ -31,7 +31,7 @@ public class CourseValidation {
             while (it.hasNext()){
                 String next =it.next();
                 if (completeids.contains(next)) {
-                    System.out.println("");
+                    System.out.println();
                 }
                 else{
                     return false;
@@ -40,7 +40,7 @@ public class CourseValidation {
             //se encarga de corequisitos
             for (var course : corequisites) {
                 if (missingCorequisites.contains(course)){
-                    missingCorequisites.remove(missingCorequisites.indexOf(course));
+                    missingCorequisites.remove(course);
                 }
                 else{
                     missingCorequisites.add(course);
