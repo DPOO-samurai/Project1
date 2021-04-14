@@ -26,8 +26,10 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Run gradle scan
+      run: ./gradlew --scan
       
-  my_second_job:
+  formatting:
     runs-on: ubuntu-latest
     
     steps:
@@ -36,5 +38,3 @@ jobs:
       uses: axel-op/googlejavaformat-action@v3.4.0
       with:
         args: "--replace"
-
-  
