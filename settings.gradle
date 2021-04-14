@@ -4,3 +4,4 @@ plugins {
 
 rootProject.name = 'Project1'
 
+isCI = System.getenv('CI') == 'true'
