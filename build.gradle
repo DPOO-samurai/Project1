@@ -1,10 +1,6 @@
 plugins {
     id 'application'
-    id("org.nosphere.gradle.github.actions") version '1.2.0'
-}
-
-if (githubActions.running.get()) {
-    println("Commit SHA: ${githubActions.environment.sha.get()}")
+    id 'org.nosphere.gradle.github.actions' version '1.2.0'
 }
 
 group 'org.example'
