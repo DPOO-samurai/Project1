@@ -24,10 +24,12 @@ jobs:
         architecture: x64
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
-    - name: Build with Gradle
-      run: ./gradlew build
-    - name: Run gradle scan
-      run: ./gradlew build --scan
+    - name: "./gradlew build"
+      uses: eskatos/gradle-command-action@v1.3.3
+      with:
+        arguments: --scan --no-build-cache build
+      env:
+       CI: true
       
   formatting:
     runs-on: ubuntu-latest
