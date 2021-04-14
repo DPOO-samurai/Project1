@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id("org.nosphere.gradle.github.actions") version "1.2.0"
+    id("org.nosphere.gradle.github.actions") version '1.2.0'
 }
 
 if (githubActions.running.get()) {
