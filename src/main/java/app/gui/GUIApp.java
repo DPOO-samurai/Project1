@@ -1,5 +1,3 @@
 package app.gui;
 
-public class GUIApp {
-
-}
+public class GUIApp {}

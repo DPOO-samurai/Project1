@@ -1,5 +1,3 @@
 package backend.models;
 
-public class Student {
-
-}
+public class Student {}
