@@ -27,7 +27,7 @@ jobs:
     - name: Build with Gradle
       run: ./gradlew build
     - name: Run gradle scan
-      run: ./gradlew --scan
+      run: ./gradlew build --scan
       
   formatting:
     runs-on: ubuntu-latest
